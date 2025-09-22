@@ -1,5 +1,6 @@
 # Documentacion  de la aplicacion
 ## Objetivo:
+El objetivo es dar a comocer sobre la informacion de nutricion en nuestra app "nutriApp".
 
 ## Integrantes:
 - Borrego Zapata Yareli Estrella
