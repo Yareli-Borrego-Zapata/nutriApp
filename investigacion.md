@@ -16,23 +16,23 @@ La metodología más empleada en estos estudios de benchmarking o análisis comp
 ## Experiencia de Usuario (Facilidad de Uso, Diseño).
 | Aplicacion |Diseño y facilidad de uso| Enfoque principal|
 |--------------|--------------|--------------|
-|Cronometer|Diseño funcional y denso en información. Presenta una curva de aprendizaje ligeramente más alta debido a la profundidad de los datos que ofrece.|Precisión y Análisis Nutricional Detallado (Micronutrientes).|
-|Yazio|Atractivo, moderno y altamente intuitivo. Ofrece un excelente equilibrio entre diseño visual y facilidad de registro de calorías.|Simplicidad en el conteo calórico e integración del Ayuno Intermitente.|
-|Lose It!|Limpio, moderno y minimalista. Prioriza la rapidez en el registro y la visualización clara del progreso hacia el objetivo calórico diario.|Pérdida de Peso mediante la gestión eficiente del presupuesto calórico.|
+|**Cronometer**|Diseño funcional y denso en información. Presenta una curva de aprendizaje ligeramente más alta debido a la profundidad de los datos que ofrece.|Precisión y Análisis Nutricional Detallado (Micronutrientes).|
+|**Yazio**|Atractivo, moderno y altamente intuitivo. Ofrece un excelente equilibrio entre diseño visual y facilidad de registro de calorías.|Simplicidad en el conteo calórico e integración del Ayuno Intermitente.|
+|**Lose It!**|Limpio, moderno y minimalista. Prioriza la rapidez en el registro y la visualización clara del progreso hacia el objetivo calórico diario.|Pérdida de Peso mediante la gestión eficiente del presupuesto calórico.|
 
 ## Puntos fuertes y debiles.
 | Aplicacion |Puntos Fuertes(PROS)|Puntos Debiles(CONTRAS)|
 |--------------|--------------|--------------|
-|Cronometer|Precisión nutricional insuperable (más de 84 micronutrientes).Base de datos verificada (fuentes gubernamentales). Ideal para dietas complejas o basadas en datos (Keto, Vegana).| Interfaz más densa y compleja, con una curva de aprendizaje mayor. Menos atractivo visualmente que Yazio o Lose It!|
-|Yazio|Diseño excelente y usabilidad intuitiva.  Seguimiento de ayuno intermitente en la versión básica.  Base de datos sólida y relevante para el mercado europeo.|Funciones avanzadas de nutrición y recetas limitadas a la versión PRO. Su precisión en micronutrientes no iguala a Cronometer.|
-|Lose It!|Registro de alimentos muy rápido y enfoque simple. Característica innovadora "Snap It" (Premium).  Ideal para usuarios que solo se centran en el conteo calórico.| El seguimiento avanzado de macros es limitado y requiere pago. Menor enfoque en la precisión de micronutrientes.|
+|**Cronometer**|Precisión nutricional insuperable (más de 84 micronutrientes).Base de datos verificada (fuentes gubernamentales). Ideal para dietas complejas o basadas en datos (Keto, Vegana).| Interfaz más densa y compleja, con una curva de aprendizaje mayor. Menos atractivo visualmente que Yazio o Lose It!|
+|**Yazio**|Diseño excelente y usabilidad intuitiva.  Seguimiento de ayuno intermitente en la versión básica.  Base de datos sólida y relevante para el mercado europeo.|Funciones avanzadas de nutrición y recetas limitadas a la versión PRO. Su precisión en micronutrientes no iguala a Cronometer.|
+|**Lose It!**|Registro de alimentos muy rápido y enfoque simple. Característica innovadora "Snap It" (Premium).  Ideal para usuarios que solo se centran en el conteo calórico.| El seguimiento avanzado de macros es limitado y requiere pago. Menor enfoque en la precisión de micronutrientes.|
 
 ## Caracteristicas Innovadoras
 | Caracteristica |Aplicacion |Descripcion|
 |--------------|--------------|--------------|
-|Analisis de micronutrientes|Cronometer|Su enfoque único en el seguimiento de más de 84 micronutrientes (vitaminas, minerales) lo convierte en la herramienta más científica y precisa para el análisis dietético.|
-|Ayuno y recetas integradas|Yazio|Innova al ofrecer una solución "todo en uno" que combina el registro calórico con una gestión completa del ayuno intermitente y una extensa librería de recetas.|
-|Reconocimiento de fotos(IA)|Lose It!|La función "Snap It" (Premium) utiliza inteligencia artificial para estimar las calorías de una comida mediante una foto, innovando en la velocidad y facilidad del registro de alimentos.|
+|Analisis de micronutrientes|**Cronometer**|Su enfoque único en el seguimiento de más de 84 micronutrientes (vitaminas, minerales) lo convierte en la herramienta más científica y precisa para el análisis dietético.|
+|Ayuno y recetas integradas|**Yazio**|Innova al ofrecer una solución "todo en uno" que combina el registro calórico con una gestión completa del ayuno intermitente y una extensa librería de recetas.|
+|Reconocimiento de fotos(IA)|**Lose It!**|La función "Snap It" (Premium) utiliza inteligencia artificial para estimar las calorías de una comida mediante una foto, innovando en la velocidad y facilidad del registro de alimentos.|
 
 ## Diseño y Resultados de Encuesta
 
