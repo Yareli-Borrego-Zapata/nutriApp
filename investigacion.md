@@ -13,7 +13,7 @@ La metodología más empleada en estos estudios de benchmarking o análisis comp
 | **Base de datos**   |Verificada y muy precisa (USDA, bases de datos gubernamentales). Enfocada en la precisión nutricional, minimizando entradas de usuario no verificadas.|Amplia base de datos, especialmente fuerte en productos europeos. Buena base de recetas.|Extensa base de datos.(amplia pero con más entradas de usuario que Cronometer). Enfoque en la velocidad de búsqueda. |
 | **Planes de dieta/ayuno**| Permite seguimiento de cualquier tipo de dieta (Keto, Vegana, etc.) gracias a su enfoque en micronutrientes. Ofrece temporizadores de ayuno intermitente (Premium).|Ofrece seguimiento de varios esquemas de ayuno intermitente en la versión gratuita. La versión PRO incluye recetas y planes de comidas.|Se enfoca en el presupuesto calórico para la pérdida de peso. La versión Premium ofrece planes más estructurados y seguimiento avanzado de macros. |
 
-## Experiencia de Usuario (Facilidad de Uso, Diseño.
+## Experiencia de Usuario (Facilidad de Uso, Diseño).
 | Aplicacion |Diseño y facilidad de uso| Enfoque principal|
 |--------------|--------------|--------------|
 |Cronometer|Diseño funcional y denso en información. Presenta una curva de aprendizaje ligeramente más alta debido a la profundidad de los datos que ofrece.|Precisión y Análisis Nutricional Detallado (Micronutrientes).|
