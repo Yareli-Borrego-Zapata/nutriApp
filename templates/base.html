@@ -14,35 +14,57 @@
   </header>
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-    <div class="container">
-      <a class="navbar-brand fw-bold" href="/">NutriFlow</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="/">NutriFlow</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
-          <li class="nav-item"><a class="nav-link" href="/perfil">Perfil</a></li>
-          <li class="nav-item"><a class="nav-link" href="/educacion">Educación e Información</a></li>
-          <li class="nav-item"><a class="nav-link" href="/recetas">Recetas</a></li>
-           <li class="nav-item"><a class="nav-link" href="/herramientas">Herramientas</a></li>
-        </ul>
-         <div class="d-flex">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="/perfil">Perfil</a></li>
+        <li class="nav-item"><a class="nav-link" href="/educacion">Educación e Información</a></li>
+        <li class="nav-item"><a class="nav-link" href="/recetas">Recetas</a></li>
+        <li class="nav-item"><a class="nav-link" href="/herramientas">Herramientas</a></li>
+      </ul>
+
+      <div class="d-flex">
+        {% if 'usuario' in session %}
+          <span class="navbar-text text-white me-3">
+            Hola, {{ session['usuario'] }}
+          </span>
+          <a href="/cerrarS" class="btn btn-outline-light">Cerrar Sesión</a>
+        {% else %}
           <a href="/iniciarS" class="btn btn-outline-light me-2">Iniciar Sesión</a>
           <a href="/registrarse" class="btn btn-success">Registrarse</a>
-        </div>
+        {% endif %}
       </div>
     </div>
-  </nav>
+  </div>
+</nav>
 
-  <main class="container mb-5">
-    {% block content %}
-    {% endblock %}
-  </main>
+<main class="container mb-5">
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      <div class="container mb-4">
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+
+
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  {% endwith %}
   
+  {% block content %}
+  {% endblock %}
+</main>
 
-
+  
   <footer class="bg-dark text-white text-center py-3">
     <p class="mb-0">© 2025 NutriFlow — Todos los derechos reservados.</p>
     <small>Borrego Zapata Y Martinez Valtierra</small>
