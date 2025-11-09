@@ -1,5 +1,127 @@
 {% extends "base.html" %}
 {% block content %}
+<div class="container my-5">
+    <div class="text-center mb-4">
+        <h2 class="fw-bold text-success">Registro de Usuario</h2>
+    <p class="text-secondary">Completa tu perfil para obtener recomendaciones personalizadas</p>
+  </div>
 
+ <form class="card shadow border-success p-4" method="POST" action="{{ url_for('register') }}">
+
+    <h4 class="text-success fw-bold mb-3">Datos Personales</h4>
+    <div class="row g-3 mb-4">
+      <div class="col-md-6">
+        <label for="nombre" class="form-label">Nombre</label>
+        <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Ingresa tu nombre" required>
+      </div>
+      <div class="col-md-6">
+        <label for="apellidos" class="form-label">Apellidos</label>
+        <input type="text" id="apellidos" name="apellidos" class="form-control" placeholder="Ingresa tus apellidos">
+      </div>
+      <div class="col-md-4">
+        <label for="edad" class="form-label">Edad</label>
+        <input type="number" id="edad" name="edad" class="form-control" min="10" max="100">
+      </div>
+      <div class="col-md-4">
+        <label for="sexo" class="form-label">Sexo</label>
+        <select id="sexo" name="sexo" class="form-select">
+          <option selected disabled>Selecciona...</option>
+          <option>Femenino</option>
+          <option>Masculino</option>
+          <option>Otro</option>
+        </select>
+      </div>
+      <div class="col-md-4">
+        <label for="actividad" class="form-label">Nivel de Actividad Física</label>
+        <select id="actividad" name="actividad" class="form-select">
+          <option selected disabled>Selecciona...</option>
+          <option>Muy Alto</option>
+          <option>Alto</option>
+          <option>Mediano</option>
+          <option>Bajo</option>
+          <option>Muy Bajo</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="peso" class="form-label">Peso (kg)</label>
+        <input type="number" id="peso" name="peso" class="form-control" step="0.1">
+      </div>
+      <div class="col-md-6">
+        <label for="altura" class="form-label">Altura (cm)</label>
+        <input type="number" id="altura" name="altura" class="form-control">
+      </div>
+      <div class="col-md-6">
+        <label for="email" class="form-label">Correo electrónico</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="usuario@gmail.com" required>
+      </div>
+      <div class="col-md-6">
+        <label for="password" class="form-label">Contraseña</label>
+        <input type="password" id="password" name="password" class="form-control" required>
+      </div>
+    </div>
+
+    <h4 class="text-success fw-bold mb-3">Objetivos</h4>
+    <div class="mb-4">
+      <select id="objetivo" name="objetivo" class="form-select">
+        <option selected disabled>Selecciona tu objetivo principal...</option>
+        <option>Bajar de peso</option>
+        <option>Aumentar masa muscular</option>
+        <option>Mantener peso</option>
+        <option>Mejorar digestión</option>
+        <option>Controlar una condición (diabetes, hipertensión)</option>
+      </select>
+    </div>
+
+    <h4 class="text-success fw-bold mb-3">Preferencias y Restricciones</h4>
+    <div class="row g-3 mb-4">
+      <div class="col-md-6">
+        <label for="alergias" class="form-label">Alergias</label>
+        <input type="text" id="alergias" name="alergias" class="form-control" placeholder="Ej. Maní, mariscos">
+      </div>
+      <div class="col-md-6">
+        <label for="intolerancias" class="form-label">Intolerancias</label>
+        <input type="text" id="intolerancias" name="intolerancias" class="form-control" placeholder="Ej. Lactosa, gluten">
+      </div>
+      <div class="col-md-6">
+        <label for="dieta" class="form-label">Tipo de dieta</label>
+        <select id="dieta" name="dieta" class="form-select">
+          <option selected disabled>Selecciona...</option>
+          <option>Vegana</option>
+          <option>Vegetariana</option>
+          <option>Keto</option>
+          <option>Mediterránea</option>
+          <option>Otra</option>
+        </select>
+      </div>
+      <div class="col-md-6">
+        <label for="no_gusta" class="form-label">Alimentos que no te gustan</label>
+        <input type="text" id="no_gusta" name="no_gusta" class="form-control" placeholder="Ej. brócoli, hígado">
+      </div>
+    </div>
+
+    <h4 class="text-success fw-bold mb-3">Nivel de Experiencia</h4>
+    <div class="mb-4">
+      <select id="experiencia" name="experiencia" class="form-select">
+        <option selected disabled>Selecciona tu nivel...</option>
+        <option>Principiante</option>
+        <option>Intermedio</option>
+        <option>Chef aficionado</option>
+      </select>
+    </div>
+
+    <div class="text-center">
+      <button type="submit" class="btn btn-success px-4">Registrarme</button>
+    </div>
+
+    <div class="text-center mt-3">
+      <p class="text-secondary">
+        ¿Ya tienes cuenta?
+        <a href="/iniciarS" class="text-success fw-bold text-decoration-none">
+          Inicia sesión aquí
+        </a>
+      </p>
+    </div>
+  </form>
+</div>
 
 {% endblock %}
