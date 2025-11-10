@@ -1,5 +1,59 @@
 {% extends "base.html" %}
 {% block content %}
 
+<div class="container my-5">
+  <div class="text-center mb-4">
+    <h2 class="fw-bold text-success">Tu Perfil NutriFlow</h2>
+    <p class="text-secondary">BIENVENIDO A TU PERFIL</p>
+  </div>
+
+  <div class="card shadow border-success mb-4">
+    <div class="card-header bg-success text-white fw-bold">
+      Datos Personales
+    </div>
+    <div class="card-body">
+      <div class="row mb-3">
+        <div class="col-md-6"><strong>Nombre:</strong> {{ session.get('nombre', 'No disponible') }}</div>
+        <div class="col-md-6"><strong>Apellidos:</strong> {{ session.get('apellidos', 'No disponible') }}</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-3"><strong>Edad:</strong> {{ session.get('edad', 'No disponible') }}</div>
+        <div class="col-md-3"><strong>Sexo:</strong> {{ session.get('sexo', 'No disponible') }}</div>
+        <div class="col-md-3"><strong>Peso:</strong> {{ session.get('peso', 'No disponible') }} kg</div>
+        <div class="col-md-3"><strong>Altura:</strong> {{ session.get('altura', 'No disponible') }} cm</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6"><strong>Actividad Física:</strong> {{ session.get('actividad', 'No disponible') }}</div>
+        <div class="col-md-6"><strong>Email:</strong> {{ session.get('email', 'No disponible') }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card shadow border-success mb-4">
+    <div class="card-header bg-success text-white fw-bold">
+      Objetivos
+    </div>
+    <div class="card-body">
+      <p>{{ session.get('objetivos', 'No especificado') }}</p>
+    </div>
+  </div>
+
+  <div class="card shadow border-success mb-4">
+    <div class="card-header bg-success text-white fw-bold">
+      Preferencias y Restricciones
+    </div>
+    <div class="card-body">
+      <div class="row mb-3">
+        <div class="col-md-6"><strong>Alergias:</strong> {{ session.get('alergias', 'No especificadas') }}</div>
+        <div class="col-md-6"><strong>Intolerancias:</strong> {{ session.get('intolerancias', 'No especificadas') }}</div>
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-6"><strong>Tipo de dieta:</strong> {{ session.get('dietas', 'No especificada') }}</div>
+        <div class="col-md-6"><strong>Alimentos que no te gustan:</strong> {{ session.get('no_gusta', 'No especificados') }}</div>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% endblock %}
+

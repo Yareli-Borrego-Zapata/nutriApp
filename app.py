@@ -2,7 +2,15 @@ from flask import Flask, render_template , request, redirect, url_for, flash, se
 from datetime import datetime 
 
 app = Flask(__name__)
-app.secret_key = "Nutriflow123"
+app.secret_key = "Nutriflow1234"
+
+usuarios = [
+    {
+        "nombre": "Nombre",
+        "email": "usuario@gmail.com",
+        "contraseña": "1234"
+    }
+]
 
 @app.route("/")
 def index():
@@ -35,7 +43,7 @@ def login():
         password = request.form.get("password")
 
 
-        if email == "usuario@demo.com" and password == "1234":
+        if email == "usuario@gmail.com" and password == "1234":
             session["usuario"] = "Usuario Demo"
             flash("Inicio de sesión exitoso. ¡Bienvenido!", "success")
             return redirect(url_for("index"))
@@ -51,21 +59,28 @@ def logout():
     return redirect(url_for("index"))
 
 @app.route("/registrarse", methods=["GET", "POST"])
+
 def register():
     if request.method == "POST":
-        nombre = request.form.get("nombre")
-        email = request.form.get("email")
-        password = request.form.get("password")
+        session["nombre"] = request.form.get("nombre")
+        session["apellidos"] = request.form.get("apellidos")
+        session["edad"] = request.form.get("edad")
+        session["sexo"] = request.form.get("sexo")
+        session["actividad"] = request.form.get("actividad")
+        session["peso"] = request.form.get("peso")
+        session["altura"] = request.form.get("altura")
+        session["email"] = request.form.get("email")
+        session["password"] = request.form.get("password")
+        session["objetivos"] = request.form.get("objetivos")
+        session["alergias"] = request.form.get("alergias")
+        session["intolerancias"] = request.form.get("intolerancias")
+        session["dietas"] = request.form.get("dietas")
+        session["no_gusta"] = request.form.get("no_gusta")
 
-        if not nombre or not email or not password:
-            flash("Por favor, completa todos los campos obligatorios.", "warning")
-            return redirect(url_for("register"))
-
-        session["usuario"] = nombre
-        flash(f"¡Bienvenido, {nombre}! Registro exitoso.", "success")
+        session["usuario"] = session["nombre"]
+        flash(f"¡Bienvenido, {session['nombre']}! Registro exitoso.", "success")
         return redirect(url_for("index"))
 
     return render_template("registrarse.html")
 if __name__ == "__main__":
-
     app.run(debug=True)
