@@ -32,9 +32,50 @@ def educacion():
 def recetas():
     return render_template("recetas.html")
 
-@app.route("/herramientas")
+@app.route("/herramientas", methods=["GET", "POST"])
 def herramientas():
+    if request.method == "POST":
+        if "resultado" in request.form:
+            try:
+                peso = float(request.form.get("peso"))
+                altura = float(request.form.get("altura")) / 100
+
+                imc = peso / (altura ** 2)
+                resultado_imc = round(imc, 2)
+
+        
+                if imc < 18.5:
+                    categoria_imc = "Bajo peso"
+                elif 18.5 <= imc < 25:
+                    categoria_imc = "Peso normal"
+                elif 25 <= imc < 30:
+                    categoria_imc = "Sobrepeso"
+                else:
+                    categoria_imc = "Obesidad"
+                
+    
+                return redirect(url_for("resultado", tipo="imc", resultado=resultado_imc, categoria=categoria_imc))
+
+            except:
+                return redirect(url_for("resultado", tipo="imc", resultado="Error", categoria="Datos no válidos"))
+        
+        elif "tmb" in request.form:
+            try:
+                peso = float(request.form.get("peso_tmb"))
+                altura = float(request.form.get("altura_tmb"))
+                edad = int(request.form.get("edad"))
+                sexo = request.form.get("sexo_tmb")
+
+                if sexo == "m":
+                    tmb = 66 + (13.75 * peso) + (5 * altura) - (6.75 * edad)
+                else:
+                    tmb = 655 + (9.56 * peso) + (1.85 * altura) - (4.68 * edad)
+                return redirect(url_for("resultado", tipo="tmb", resultado=tmb))
+
+            except:
+                return redirect(url_for("resultado", tipo="tmb", resultado="Error"))
     return render_template("herramientas.html")
+
 
 @app.route("/iniciarS", methods=["GET", "POST"])
 def login():
