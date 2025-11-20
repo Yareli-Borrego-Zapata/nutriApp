@@ -1,60 +1,67 @@
 {% extends "base.html" %}
 {% block content %}
+<h2 class="text-center mb-4">Calculadora de Peso Corporal Ideal</h2>
 
-<div class="container mt-5 mb-5">
-    <h2 class="text-center text-success fw-bold mb-4">Herramientas Nutricionales</h2>
-    <div class="card border-success mb-4">
-        <div class="card-body">
-            <h5 class="card-title text-success">Calculadora de IMC</h5>
-            <form method="POST" action="/herramientas">
-                <div class="mb-3">
-                    <label class="form-label">Peso (kg)</label>
-                    <input type="number" step="0.1" class="form-control" name="peso" required>
-                </div>
+<div class="card shadow p-4 mx-auto" style="max-width: 500px;">
+  <form action="/calculadora_peso_ideal" method="POST">
 
-                <div class="mb-3">
-                    <label class="form-label">Altura (cm)</label>
-                    <input type="number" step="0.1" class="form-control" name="altura" required>
-                </div>
-
-                <button type="submit" class="btn btn-success" name="imc">Calcular IMC</button>
-            </form>
-        </div>
+    <div class="mb-3">
+      <label class="form-label">Altura (cm):</label>
+      <input type="number" name="altura" class="form-control" min="120" max="230" step="1" required>
     </div>
 
-<!-- Este es el TMB esme -->
-    <div class="card border-success mb-4">
-        <div class="card-body">
-            <h5 class="card-title text-success">Calculadora de TMB</h5>
-            <form method="POST" action="/herramientas">
-                <div class="mb-3">
-                    <label class="form-label">Peso (kg)</label>
-                    <input type="number" step="0.1" class="form-control" name="peso_tmb" required>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Altura (cm)</label>
-                    <input type="number" step="0.1" class="form-control" name="altura_tmb" required>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Edad</label>
-                    <input type="number" class="form-control" name="edad" required>
-                </div>
-
-                <div class="mb-3">
-                    <label class="form-label">Sexo</label>
-                    <select class="form-control" name="sexo_tmb" required>
-                        <option value="m">Masculino</option>
-                        <option value="f">Femenino</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="btn btn-success" name="tmb">Calcular TMB</button>
-            </form>
-        </div>
+    <div class="mb-3">
+      <label class="form-label">Sexo:</label>
+      <select name="sexo" class="form-select" required>
+        <option value="">Seleccione una opción</option>
+        <option value="hombre">Hombre</option>
+        <option value="mujer">Mujer</option>
+      </select>
     </div>
 
+    <button type="submit" class="btn btn-success w-100">Calcular</button>
+  </form>
 </div>
 
+{% if resultado is not none %}
+<div class="alert alert-info text-center mt-4">
+  <h4>Tu peso corporal ideal es:</h4>
+  <p class="fw-bold display-6">{{ resultado }} kg</p>
+</div>
+{% endif %}
+
+<hr class="my-5">
+
+<h2 class="text-center mb-4">Calculadora de Macronutrientes</h2>
+
+<div class="card shadow p-4 mx-auto" style="max-width: 500px;">
+  <form action="/calculadora_macros" method="POST">
+
+    <div class="mb-3">
+      <label class="form-label">Calorías diarias:</label>
+      <input type="number" name="calorias" class="form-control" min="800" max="6000" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Objetivo:</label>
+      <select name="objetivo" class="form-select" required>
+        <option value="">Seleccione una opción</option>
+        <option value="perdida">Pérdida de peso</option>
+        <option value="mantenimiento">Mantenimiento</option>
+        <option value="ganancia">Ganancia muscular</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">Calcular Macronutrientes</button>
+  </form>
+</div>
+
+{% if macros %}
+<div class="alert alert-warning text-center mt-4">
+  <h4>Macronutrientes recomendados:</h4>
+  <p><strong>Proteínas:</strong> {{ macros.proteinas }} g</p>
+  <p><strong>Grasas:</strong> {{ macros.grasas }} g</p>
+  <p><strong>Carbohidratos:</strong> {{ macros.carbohidratos }} g</p>
+</div>
+{% endif %}
 {% endblock %}

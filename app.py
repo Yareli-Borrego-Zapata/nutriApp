@@ -34,47 +34,64 @@ def recetas():
 
 @app.route("/herramientas", methods=["GET", "POST"])
 def herramientas():
-    if request.method == "POST":
-        if "resultado" in request.form:
-            try:
-                peso = float(request.form.get("peso"))
-                altura = float(request.form.get("altura")) / 100
-
-                imc = peso / (altura ** 2)
-                resultado_imc = round(imc, 2)
-
-        
-                if imc < 18.5:
-                    categoria_imc = "Bajo peso"
-                elif 18.5 <= imc < 25:
-                    categoria_imc = "Peso normal"
-                elif 25 <= imc < 30:
-                    categoria_imc = "Sobrepeso"
-                else:
-                    categoria_imc = "Obesidad"
-                
-    
-                return redirect(url_for("resultado", tipo="imc", resultado=resultado_imc, categoria=categoria_imc))
-
-            except:
-                return redirect(url_for("resultado", tipo="imc", resultado="Error", categoria="Datos no válidos"))
-        
-        elif "tmb" in request.form:
-            try:
-                peso = float(request.form.get("peso_tmb"))
-                altura = float(request.form.get("altura_tmb"))
-                edad = int(request.form.get("edad"))
-                sexo = request.form.get("sexo_tmb")
-
-                if sexo == "m":
-                    tmb = 66 + (13.75 * peso) + (5 * altura) - (6.75 * edad)
-                else:
-                    tmb = 655 + (9.56 * peso) + (1.85 * altura) - (4.68 * edad)
-                return redirect(url_for("resultado", tipo="tmb", resultado=tmb))
-
-            except:
-                return redirect(url_for("resultado", tipo="tmb", resultado="Error"))
     return render_template("herramientas.html")
+
+@app.route("/calculadora_peso_ideal", methods=["GET", "POST"])
+def calculadora_peso_ideal():
+    resultado = None
+
+    if request.method == "POST":
+        try:
+            altura = float(request.form.get("altura"))
+            sexo = request.form.get("sexo")
+
+            altura_m = altura / 100
+
+            if sexo == "hombre":
+                peso_ideal = 50 + 2.3 * ((altura_m * 100 / 2.54) - 60)
+            else:
+                peso_ideal = 45.5 + 2.3 * ((altura_m * 100 / 2.54) - 60)
+
+            resultado = round(peso_ideal, 2)
+
+        except:
+            resultado = "Error: Verifica los datos ingresados."
+
+    return render_template("herramientas.html", resultado=resultado)
+
+@app.route("/calculadora_macros", methods=["GET", "POST"])
+def calculadora_macros():
+    resultados = None
+
+    if request.method == "POST":
+        try:
+            calorias = float(request.form.get("calorias"))
+            objetivo = request.form.get("objetivo")
+            
+            if objetivo == "perdida":
+                pct_prot, pct_grasas, pct_carbs = 0.30, 0.25, 0.45
+
+            elif objetivo == "mantenimiento":
+                pct_prot, pct_grasas, pct_carbs = 0.25, 0.30, 0.45
+
+            elif objetivo == "ganancia":
+                pct_prot, pct_grasas, pct_carbs = 0.30, 0.25, 0.45
+
+            proteinas = round((calorias * pct_prot) / 4, 1)
+            grasas = round((calorias * pct_grasas) / 9, 1)
+            carbohidratos = round((calorias * pct_carbs) / 4, 1)
+
+            resultados = {
+                "proteinas": proteinas,
+                "grasas": grasas,
+                "carbohidratos": carbohidratos,
+            }
+
+        except:
+            resultados = "Error: Verifica tus datos."
+
+    return render_template("herramientas.html", macros=resultados)
+
 
 
 @app.route("/iniciarS", methods=["GET", "POST"])
