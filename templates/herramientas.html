@@ -1,5 +1,135 @@
 {% extends "base.html" %}
 {% block content %}
+
+<hr class="my-5">
+<h2 class="text-center mb-4">Calculadora de Índice de Masa Corporal (IMC)</h2>
+
+<div class="card shadow p-4 mx-auto" style="max-width: 500px;">
+    <form action="/calculadora_imc" method="POST">
+
+    <div class="mb-3">
+        <label class="form-label">Peso (kg):</label>
+        <input type="number" name="peso" class="form-control" min="20" max="300" step="0.1" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Altura (cm):</label>
+        <input type="number" name="altura" class="form-control" min="120" max="230" step="0.1" required>
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">Calcular IMC</button>
+    </form>
+</div>
+
+{% if imc %}
+<div class="alert alert-primary text-center mt-4">
+    <h4>Tu IMC es:</h4>
+    <p class="fw-bold display-6">{{ imc }}</p>
+    <p><strong>Categoría:</strong> {{ categoria }}</p>
+    <p>{{ mensaje }}</p>
+
+</div>
+{% endif %}
+
+<hr class="my-5">
+
+<h2 class="text-center mb-4">Calculadora de Tasa Metabólica Basal (TMB)</h2>
+
+<div class="card shadow p-4 mx-auto" style="max-width: 500px;">
+    <form action="/calculadora_tmb" method="POST">
+
+    <div class="mb-3">
+        <label class="form-label">Peso (kg):</label>
+        <input type="number" name="peso" class="form-control" min="20" max="300" step="0.1" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Altura (cm):</label>
+        <input type="number" name="altura" class="form-control" min="120" max="230" step="0.1" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Edad:</label>
+        <input type="number" name="edad" class="form-control" min="10" max="100" required>
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Sexo:</label>
+        <select name="sexo" class="form-select" required>
+        <option value="">Seleccione una opción</option>
+        <option value="hombre">Hombre</option>
+        <option value="mujer">Mujer</option>
+        </select>
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">Calcular TMB</button>
+    </form>
+</div>
+
+{% if tmb %}
+<div class="alert alert-secondary text-center mt-4">
+    <h4>Tu Tasa Metabólica Basal es:</h4>
+    <p class="fw-bold display-6">{{ tmb }} kcal/día</p>
+    <p>{{ mensaje_tmb }}</p>
+</div>
+{% endif %}
+
+<hr class="my-5">
+
+<h2 class="text-center mb-4">Calculadora de Gasto Calórico Total (GCT)</h2>
+
+<div class="card shadow p-4 mx-auto" style="max-width: 500px;">
+  <form action="/calculadora_gct" method="POST">
+
+    <div class="mb-3">
+      <label class="form-label">Peso (kg):</label>
+      <input type="number" name="peso" class="form-control" min="20" max="300" step="0.1" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Altura (cm):</label>
+      <input type="number" name="altura" class="form-control" min="120" max="230" step="0.1" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Edad:</label>
+      <input type="number" name="edad" class="form-control" min="10" max="100" required>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Sexo:</label>
+      <select name="sexo" class="form-select" required>
+        <option value="">Seleccione una opción</option>
+        <option value="hombre">Hombre</option>
+        <option value="mujer">Mujer</option>
+      </select>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Nivel de actividad:</label>
+      <select name="actividad" class="form-select" required>
+        <option value="">Seleccione una opción</option>
+        <option value="sedentario">Sedentario (poco o nada de ejercicio)</option>
+        <option value="ligero">Ligero (1-3 días/semana)</option>
+        <option value="moderado">Moderado (3-5 días/semana)</option>
+        <option value="activo">Activo (6-7 días/semana)</option>
+        <option value="muy_activo">Muy activo (entrenamientos fuertes o doble sesión)</option>
+      </select>
+    </div>
+
+    <button type="submit" class="btn btn-success w-100">Calcular GCT</button>
+  </form>
+</div>
+
+{% if gct %}
+<div class="alert alert-dark text-center mt-4">
+  <h4>Tu Gasto Calórico Total es:</h4>
+  <p class="fw-bold display-6">{{ gct }} kcal/día</p>
+  <p>{{ mensaje_gct }}</p>
+</div>
+{% endif %}
+
+<hr class="my-5">
 <h2 class="text-center mb-4">Calculadora de Peso Corporal Ideal</h2>
 
 <div class="card shadow p-4 mx-auto" style="max-width: 500px;">
@@ -23,17 +153,15 @@
   </form>
 </div>
 
-{% if resultado is not none %}
-<div class="alert alert-info text-center mt-4">
+{% if resultado %}
+<div class="alert alert-primary text-center mt-4">
   <h4>Tu peso corporal ideal es:</h4>
   <p class="fw-bold display-6">{{ resultado }} kg</p>
 </div>
 {% endif %}
 
 <hr class="my-5">
-
 <h2 class="text-center mb-4">Calculadora de Macronutrientes</h2>
-
 <div class="card shadow p-4 mx-auto" style="max-width: 500px;">
   <form action="/calculadora_macros" method="POST">
 
