@@ -1,96 +1,146 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="text-center mb-5">
-    <h2 class="fw-bold text-success">Educación e Información</h2>
-    <p class="text-secondary">Aprende lo esencial sobre nutrición, salud y bienestar.</p>
+<div class="py-4">
+  <div class="text-center mb-4">
+    <h2 class="fw-bold text-success">Módulo de Educación e Información</h2>
+    <p class="text-secondary mb-0">Artículos, guías y recursos descargables para mejorar tus hábitos alimenticios.</p>
+  </div>
+  <section class="mb-5">
+    <h3 class="h5 text-success fw-bold mb-3">Artículos Educativos</h3>
+
+    <div class="accordion" id="accordionArticulos">
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+            ¿Cómo leer las etiquetas nutricionales?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionArticulos">
+          <div class="accordion-body">
+            <p class="mb-2">Aprende a identificar porciones, calorías, grasas, azúcares añadidos, fibra y proteínas. Te explicamos qué significan los porcentajes del valor diario y cómo comparar productos similares para elegir la opción más saludable.</p>
+            <ul>
+              <li>Porción vs. paquete completo.</li>
+              <li>Ingredientes en orden de cantidad.</li>
+              <li>Etiquetas engañosas: "light", "natural", "sin azúcar".</li>
+            </ul>
+            <p>Para leer una etiqueta nutricional, primero fíjate en la porción, porque todo lo demás depende de esa medida. Luego revisa las calorías para saber qué tan pesado es el producto y observa las grasas, sobre todo las saturadas y que no haya grasas trans. Después checa el sodio y los azúcares, especialmente los añadidos, que son los que más conviene evitar. La fibra y la proteína suelen ser buenas señales cuando vienen en cantidades decentes. Al final mira la lista de ingredientes: mientras más corta y comprensible sea, mejor es el alimento. Con esos puntos ya puedes saber rápido si lo que estás comiendo es saludable o no.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Mitos y verdades sobre las dietas de moda
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionArticulos">
+          <div class="accordion-body">
+            <p class="mb-2">Analizamos las dietas populares (cetogénica, detox, ayuno intermitente, bajas en carbohidratos) y separamos evidencia de moda. Hablamos de riesgos, beneficios a corto y largo plazo y para quiénes pueden ser apropiadas o no.</p>
+            <ul>
+              <li>Riesgos de déficit de micronutrientes.</li>
+              <li>Importancia de sostenibilidad y adherencia.</li>
+              <li>Cuando consultar con un profesional de la salud.</li>
+            </ul>
+
+                <p>
+Las dietas de moda suelen prometer resultados rápidos, y ahí es donde empiezan los mitos. Uno de los más comunes es creer que bajar de peso rápido siempre es mejor; en realidad, las pérdidas muy bruscas casi siempre se recuperan igual de rápido porque no cambian los hábitos. Otro mito es pensar que eliminar por completo ciertos grupos de alimentos —como los carbohidratos— es la clave para adelgazar. La verdad es que el cuerpo sí necesita carbohidratos, grasas y proteínas; lo importante es la calidad y la cantidad, no la eliminación total.
+</p>
+<p>
+También se cree que las dietas “detox” limpian el cuerpo de toxinas, cuando en realidad el hígado y los riñones ya hacen ese trabajo sin necesidad de jugos caros o ayunos extremos. Y otro engaño común es pensar que si una dieta le funcionó a alguien, te funcionará igual a ti. Cada cuerpo responde distinto según su metabolismo, nivel de actividad, salud y estilo de vida.
+</p>
+<p>
+En cuanto a las verdades, sí es cierto que algunas dietas funcionan a corto plazo porque restringen mucho las calorías, pero no suelen ser sostenibles. También es verdad que aumentar el consumo de verduras, frutas, proteínas de buena calidad y agua mejora cualquier alimentación, sin importar la dieta que sigas. Y lo más importante: la única forma de lograr cambios duraderos es combinar buena alimentación con hábitos consistentes, no con soluciones milagrosas.
+</p>
 </div>
-
-<div class="container">
-
-
-    <div class="mb-5">
-    <h4 class="fw-bold text-success">¿Qué es la Nutrición?</h4>
-    <p>
-        La nutrición es el proceso mediante el cual el cuerpo obtiene los nutrientes necesarios para 
-        funcionar correctamente. Estos incluyen proteínas, carbohidratos, grasas, vitaminas y minerales. 
-        Una buena nutrición contribuye al crecimiento, energía, prevención de enfermedades y bienestar general.</p>
-        <p>
-        Mantener un equilibrio adecuado de nutrientes es fundamental para que el cuerpo realice sus funciones 
-        de manera óptima.
-    </p>
-    </div>
-    <div class="mb-5">
-    <h4 class="fw-bold text-success">Macronutrientes</h4>
-    <p>
-        Los macronutrientes son los nutrientes que el cuerpo necesita en mayor cantidad. Entre ellos se encuentran:
-    </p>
-    <ul>
-        <li><strong>Proteínas:</strong> Reparan tejidos, fortalecen músculos y participan en funciones vitales.</li>
-        <li><strong>Carbohidratos:</strong> Proporcionan energía para las actividades diarias.</li>
-        <li><strong>Grasas saludables:</strong> Ayudan al funcionamiento del cerebro, hormonas y absorción de vitaminas.</li>
-    </ul>
-    <p>
-        Consumir la cantidad adecuada de cada uno es clave para mantener un equilibrio saludable.</p>
-    </div>
-
-
-    <div class="mb-5">
-    <h4 class="fw-bold text-success">Importancia de la Hidratación</h4>
-    <p>
-        El agua es esencial para mantener la temperatura corporal, transportar nutrientes, lubricar articulaciones 
-        y eliminar toxinas. La hidratación adecuada influye directamente en la energía, concentración y rendimiento 
-        físico.
-    </p>
-    <p>
-        Se recomienda beber suficiente agua durante el día, especialmente si realizas actividad física o vives en 
-        climas calurosos.
-    </p>
-    </div>
-
-
-    <div class="mb-5">
-    <h4 class="fw-bold text-success">Consejos para una Vida Saludable</h4>
-    <div class="row g-4">
-
-        <div class="col-md-4">
-        <div class="card h-100 border-success shadow-sm">
-            <div class="card-body">
-            <h5 class="card-title text-success">Alimentación Balanceada</h5>
-            <p class="card-text">
-                Incluye variedad de alimentos frescos como frutas, verduras, cereales integrales, proteínas 
-                magras y grasas saludables para cubrir tus necesidades diarias.
-            </p>
-            </div>
         </div>
-        </div>
+      </div>
 
-        <div class="col-md-4">
-        <div class="card h-100 border-success shadow-sm">
-            <div class="card-body">
-            <h5 class="card-title text-success">Actividad Física Regular</h5>
-            <p class="card-text">
-                Realizar actividad física ayuda a mejorar la salud cardiovascular, el estado de ánimo y el 
-                rendimiento. Caminar, correr o hacer ejercicio moderado es suficiente para comenzar.
-            </p>
-            </div>
-        </div>
-        </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            Guías sobre macronutrientes y su función
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionArticulos">
+          <div class="accordion-body">
+            <p class="mb-2">Qué son proteínas, grasas y carbohidratos, por qué son importantes, cómo calcular proporciones según objetivos (mantener, perder o ganar masa) y fuentes recomendadas de cada macronutriente.</p>
+            <ul>
+              <li>Proteínas: funciones y fuentes completas.</li>
+              <li>Grasas: saturadas vs. insaturadas.</li>
+              <li>Carbohidratos: fibra, almidón y azúcares.</li>
+            </ul>
 
-        <div class="col-md-4">
-        <div class="card h-100 border-success shadow-sm">
-            <div class="card-body">
-            <h5 class="card-title text-success">Descanso Adecuado</h5>
-            <p class="card-text">
-                Dormir entre 7 y 9 horas cada noche permite que el cuerpo se recupere, fortalece el sistema 
-                inmunológico y mejora la concentración al día siguiente.</p>
-            </div>
+            <p>
+Los macronutrientes son los componentes principales de los alimentos y los que el cuerpo necesita en mayor cantidad para funcionar correctamente. El primero son los carbohidratos, que son la fuente de energía más rápida y accesible para el cuerpo; alimentan al cerebro, los músculos y prácticamente todas las actividades diarias. Cuando comes carbohidratos de buena calidad, como frutas, verduras, granos integrales o legumbres, tu energía se mantiene estable y tu cuerpo trabaja de manera eficiente.
+</p>
+<p>
+Las proteínas son el macronutriente encargado de construir y reparar tejidos. Todo lo que tiene que ver con músculos, piel, órganos y hasta hormonas y enzimas necesita proteínas para formarse. También ayudan a mantener la saciedad, por eso las comidas con suficiente proteína evitan que sientas hambre tan rápido. Se encuentran en alimentos como carnes, lácteos, huevos, frijoles y frutos secos.
+</p>
+<p>
+Las grasas, por último, son esenciales aunque muchas veces se demonizan. El cuerpo las usa para construir membranas celulares, absorber vitaminas importantes como A, D, E y K, producir hormonas y mantener una energía más estable a largo plazo. Las grasas saludables, como las que vienen en aguacate, aceite de oliva, nueces y pescados, ayudan al corazón y al cerebro, mientras que las grasas saturadas y trans conviene limitarlas porque afectan la salud cardiovascular.
+</p>
+<p>
+La clave con los macronutrientes no es eliminarlos, sino equilibrarlos. Cada uno cumple una función vital y el cuerpo trabaja mejor cuando recibe la cantidad adecuada de los tres según tus necesidades, tu edad, tu nivel de actividad y tus objetivos personales.
+</p>
+</div>
         </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingFour">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+            La importancia de la hidratación, la fibra, etc.
+          </button>
+        </h2>
+        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionArticulos">
+          <div class="accordion-body">
+            <p class="mb-2">Explicamos por qué mantener una buena hidratación favorece el rendimiento físico y mental, el papel de la fibra en la digestión y recomendaciones prácticas para incorporar más agua y fibra en la dieta diaria.</p>
+            <ul>
+              <li>Signos de deshidratación leve y consejos prácticos.</li>
+              <li>Fuentes de fibra: frutas, verduras, legumbres y cereales integrales.</li>
+              <li>Beneficios de la fibra: saciedad, tránsito intestinal y microbiota.</li>
+            </ul>
+          </div>
         </div>
+      </div>
 
     </div>
-    </div>
+  </section>
+
+  <div class="container my-5">
+
+  <div class="text-center mb-4">
+    <h2 class="fw-bold text-success">Videos Educativos</h2>
+    <p class="text-secondary">Rutinas simples para comenzar a mejorar tu condición física.</p>
+  </div>
+
+
+  <div class="mb-5">
+    <h4 class="fw-bold text-success mb-3">Rutina de Ejercicio para Mujer</h4>
+    <iframe
+      width="100%"
+      height="315"
+      src="https://www.youtube.com/embed/gHA95nU-ZC8"
+      title="Ejercicio para Mujer"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
+
+  <div class="mb-5">
+    <h4 class="fw-bold text-success mb-3">Rutina de Ejercicio para Hombre</h4>
+    <iframe
+      width="100%"
+      height="315"
+      src="https://www.youtube.com/embed/y9-_6xBgJbE"
+      title="Ejercicio para Hombre"
+      frameborder="0"
+      allowfullscreen>
+    </iframe>
+  </div>
 
 </div>
-
 {% endblock %}
