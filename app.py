@@ -1,6 +1,6 @@
 from flask import Flask, render_template , request, redirect, url_for, flash, session
 from flask_mysqldb import MySQL
-from werkzeug.security import generate_password_hash, cheeck_pasword_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime 
 
 app = Flask(__name__)
@@ -16,14 +16,7 @@ app.config['MYSQL_DB'] = 'NutriFlow'
 
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
-
-usuarios = [
-    {
-        "nombre": "Nombre",
-        "email": "usuario@gmail.com",
-        "contraseña": "1234"
-    }
-]
+mysql = MySQL(app)
 
 @app.route("/")
 def index():
@@ -246,3 +239,5 @@ def register():
     return render_template("registrarse.html")
 if __name__ == "__main__":
     app.run(debug=True)
+
+    #falta, ya tenemos el respalo, solo editar el inicio de sesion y el registrarse para que usen la base de datos.
