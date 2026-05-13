@@ -17,5 +17,3 @@ El propósito principal es crear una herramienta que permita registrar ingresos 
 
 ![wasap2](https://github.com/user-attachments/assets/c6487bb5-6000-4bab-8d80-2cf5c364c28c)
 
-
-## Analisis de Base de Datos
